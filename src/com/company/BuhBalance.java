@@ -10,6 +10,7 @@ public class BuhBalance {
     private final List<Account> accounts;
     private final List<Operation> operations = new ArrayList<>();
     public BuhBalance()
+
     {
         this.accounts = new ArrayList<>();
         accounts.add(new Account("41", "Товары", 0, 0));
