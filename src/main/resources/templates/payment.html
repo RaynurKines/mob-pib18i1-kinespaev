@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Payments</title>
+</head>
+<body>
+<h2>Фамилия: <span th:text="${person.name}"></span></h2>
+
+<table>
+    <tr>
+        <td>Дата выплаты</td>
+        <td>Стандартная ставка</td>
+        <td>Сумма выплаты</td>
+        <td>Действие</td>
+    </tr>
+    <tr th:each="pay : ${payments}">
+        <td th:text="${pay.date}"></td>
+        <td th:text="${person.salary}"></td>
+        <td th:text="${pay.insSalary}"></td>
+        <td><a th:href="@{'/person/' + ${person.id} + '/payment/delete?date=' + ${pay.date}}">Удалить</a></td>
+    </tr>
+</table>
+
+<form method="POST" th:action="@{'/person/' + ${person.id} + '/payment'}">
+    <label>
+        Дата выплаты:
+        <input name="date">
+        Сумма начисления:
+        <input name="insSalary">
+    </label>
+
+    <button type="submit">Добавить начисление</button>
+</form>
+</body>
+</html>

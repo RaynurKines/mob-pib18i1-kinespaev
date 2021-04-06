@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/style.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h1>Сотрудники</h1>
+
+<table class="table-rounded">
+    <tr>
+        <td>Имя</td>
+        <td>Стандартная ставка</td>
+    </tr>
+    <tr th:each="p : ${persons}">
+        <td><a th:href="'person/' + ${p.id}" th:text="${p.name}">!!!</a></td>
+        <td th:text="${p.salary}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
