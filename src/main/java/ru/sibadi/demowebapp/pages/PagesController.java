@@ -60,7 +60,7 @@ public class PagesController {
         return "redirect:/person/" + id + "/payment";
     }
 
-    @PostMapping("/person/{id}/payment")п
+    @PostMapping("/person/{id}/payment")
     public String createPayment(
             @PathVariable("id") int id,
             @RequestParam("insSalary") int insSalary,
