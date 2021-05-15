@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Другая страница</title>
+</head>
+<body>
+<h1>Сорздание нового сотрудника</h1>
+<form method="POST" th:action="@{'/person'}">
+    <label>
+        <h2>Фамилия:</h2>
+        <input name="name">
+        <h2>Зарплата:</h2>
+        <input name="salary">
+    </label>
+    <button type="submit">Создать</button>
+</form>
+</body>
+</html>
