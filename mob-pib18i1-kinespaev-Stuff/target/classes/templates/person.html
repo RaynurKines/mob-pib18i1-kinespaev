@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Другая страница</title>
+</head>
+<body>
+<h1>Сотрудник</h1>
+<form method="POST" th:action="@{'/person/' + ${person.id}}">
+    <label>
+        <h2>Фамилия:</h2>
+        <input th:value="${person.name}" name="name">
+        <h2>Зарплата:</h2>
+        <input th:value="${person.salary}" name="salary">
+    </label>
+    <button type="submit">Отредактировать</button>
+</form>
+
+<h2><a th:href="@{'/person/' + ${person.id} + '/payment'}" th:text="'Его зачисления'">!!!</a></h2>
+</body>
+</html>
